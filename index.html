@@ -85,6 +85,52 @@
         .pricing-card .price { font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0; }
         .pricing-card ul { list-style: none; text-align: left; font-size: 0.9rem; color: #555; }
         .pricing-card ul li { margin-bottom: 0.25rem; }
+        .lead-capture {
+            background: #0f172a;
+            color: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .lead-capture h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .lead-capture .lead-subtext { color: #94a3b8; font-size: 1rem; margin-bottom: 1.5rem; }
+        .lead-capture form {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .lead-capture input[type="email"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            background: #1e293b;
+            color: white;
+            font-size: 1rem;
+        }
+        .lead-capture input[type="email"]::placeholder { color: #64748b; }
+        .lead-capture input[type="email"]:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        .lead-capture button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .lead-capture button:hover { background: #1d4ed8; }
+        .lead-capture .lead-note { color: #64748b; font-size: 0.8rem; margin-top: 1rem; }
+        @media (max-width: 600px) {
+            .lead-capture form { flex-direction: column; }
+        }
         footer { text-align: center; padding: 2rem; color: #777; font-size: 0.875rem; }
         @media (max-width: 600px) {
             .services { grid-template-columns: 1fr; }
@@ -193,6 +239,16 @@
             <a href="https://dev.to/dawnofgenx">dev.to</a>
             <a href="https://github.com/DawnofGenX">GitHub</a>
             <a href="mailto:pkansara0412@gmail.com">Email</a>
+        </div>
+
+        <div class="lead-capture" id="lead-capture">
+            <h2>Get the Free WhatsApp Automation Guide</h2>
+            <p class="lead-subtext">Learn how Indian businesses are saving 10+ hours/week with WhatsApp automation.</p>
+            <form action="mailto:pkansara0412@gmail.com" method="post" enctype="text/plain">
+                <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address">
+                <button type="submit">Get Free Guide</button>
+            </form>
+            <p class="lead-note">No spam. Unsubscribe anytime.</p>
         </div>
 
         <footer>
