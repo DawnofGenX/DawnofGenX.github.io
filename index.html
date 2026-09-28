@@ -71,9 +71,24 @@
         }
         .article-list a:hover { text-decoration: underline; }
         .article-list p { color: #555; font-size: 0.9rem; margin-top: 0.25rem; }
+        .pricing { margin: 2rem 0; }
+        .pricing h2 { margin-bottom: 1rem; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+        .pricing-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .pricing-card h3 { color: #2563eb; margin-bottom: 0.5rem; }
+        .pricing-card .price { font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0; }
+        .pricing-card ul { list-style: none; text-align: left; font-size: 0.9rem; color: #555; }
+        .pricing-card ul li { margin-bottom: 0.25rem; }
         footer { text-align: center; padding: 2rem; color: #777; font-size: 0.875rem; }
         @media (max-width: 600px) {
             .services { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
             h1 { font-size: 2rem; }
         }
     </style>
@@ -102,6 +117,44 @@
             <a href="https://dev.to/dawnofgenx" class="btn btn-outline">Read My Articles</a>
         </div>
 
+        <div class="pricing">
+            <h2>WhatsApp Automation Services</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p class="price">₹5,000</p>
+                    <ul>
+                        <li>WhatsApp chatbot setup</li>
+                        <li>Auto-replies & welcome messages</li>
+                        <li>Basic conversation flows</li>
+                        <li>7 days free support</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <p class="price">₹8,000</p>
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>Broadcast messaging</li>
+                        <li>Order confirmation flows</li>
+                        <li>Google Sheets/CRM integration</li>
+                        <li>14 days free support</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <p class="price">₹12,000+</p>
+                    <ul>
+                        <li>Everything in Standard</li>
+                        <li>Custom integrations</li>
+                        <li>Multi-language support</li>
+                        <li>Advanced analytics</li>
+                        <li>30 days free support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="articles">
             <h2>Recent Articles</h2>
             <ul class="article-list">
@@ -112,6 +165,10 @@
                 <li>
                     <a href="https://dev.to/dawnofgenx/how-to-build-a-whatsapp-chatbot-with-python-a-step-by-step-tutorial-4ekb">How to Build a WhatsApp Chatbot with Python</a>
                     <p>Step-by-step tutorial with code examples. Build a working chatbot in 30 minutes.</p>
+                </li>
+                <li>
+                    <a href="https://dev.to/dawnofgenx/whatsapp-business-api-pricing-in-india-complete-cost-breakdown-for-2026-120e">WhatsApp Business API Pricing in India</a>
+                    <p>Complete cost breakdown for Indian businesses in 2026. Learn about conversation pricing, free tier, and real-world cost examples.</p>
                 </li>
             </ul>
         </div>
