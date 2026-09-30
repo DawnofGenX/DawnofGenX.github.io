@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyansh Kansara — Technical Writer & WhatsApp Automation Developer</title>
-    <meta name="description" content="I help Indian businesses automate WhatsApp communication and write technical content for developer platforms.">
+    <title>Priyansh Kansara — Applied ML &amp; Embedded Systems</title>
+    <meta name="description" content="Applied ML and embedded systems engineer. Builds CPU-only verification and telemetry tools in Python. 3 merged OSS PRs to filelock and pipx; open PRs at pytest, pandas, LMCache.">
+    <meta property="og:title" content="Priyansh Kansara — Applied ML &amp; Embedded Systems">
+    <meta property="og:description" content="CPU-only verification and telemetry tools in Python. 3 merged OSS PRs to filelock and pipx; open PRs at pytest, pandas, LMCache.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dawnofgenx.github.io">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,128 +17,48 @@
             color: #1a1a1a;
             background: #fafafa;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        header { text-align: center; padding: 4rem 0 2rem; }
+        .container { max-width: 860px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 3.5rem 0 1.5rem; }
         h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
         .tagline { font-size: 1.25rem; color: #555; margin-bottom: 1rem; }
-        .subtitle { color: #777; font-size: 1rem; }
-        .services { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .service-card {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: box-shadow 0.2s;
+        .subtitle { color: #666; font-size: 1rem; }
+        .badges { margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .badge {
+            background: #0f172a; color: #e2e8f0; border-radius: 999px;
+            padding: 0.3rem 0.9rem; font-size: 0.85rem;
         }
-        .service-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .service-card h3 { margin-bottom: 0.5rem; color: #2563eb; }
-        .service-card p { color: #555; font-size: 0.95rem; }
-        .cta { text-align: center; margin: 2rem 0; }
+        section { margin: 2.75rem 0; }
+        h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+        .project {
+            background: white; border: 1px solid #e5e5e5; border-radius: 8px;
+            padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+        }
+        .project h3 { margin-bottom: 0.15rem; color: #2563eb; }
+        .project h3 a { color: #2563eb; text-decoration: none; }
+        .project h3 a:hover { text-decoration: underline; }
+        .project .meta { color: #777; font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .project p { color: #444; font-size: 0.95rem; }
+        .oss { background: white; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; }
+        .oss ul { margin: 0.6rem 0 0 1.1rem; }
+        .oss li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+        .oss .note { margin-top: 0.9rem; color: #666; font-size: 0.9rem; font-style: italic; }
+        .exp { background: white; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; }
+        .exp ul { margin: 0.5rem 0 0 1.1rem; }
+        .exp li { margin-bottom: 0.35rem; font-size: 0.95rem; }
+        .cta { text-align: center; margin: 2.5rem 0; }
         .btn {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0.5rem;
+            display: inline-block; background: #2563eb; color: white;
+            padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none;
+            font-weight: 500; margin: 0.4rem;
         }
         .btn:hover { background: #1d4ed8; }
-        .btn-outline {
-            background: transparent;
-            color: #2563eb;
-            border: 2px solid #2563eb;
-        }
+        .btn-outline { background: transparent; color: #2563eb; border: 2px solid #2563eb; }
         .btn-outline:hover { background: #eff6ff; }
         .links { text-align: center; margin: 2rem 0; }
-        .links a {
-            color: #2563eb;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
+        .links a { color: #2563eb; text-decoration: none; margin: 0 0.9rem; }
         .links a:hover { text-decoration: underline; }
-        .articles { margin: 2rem 0; }
-        .articles h2 { margin-bottom: 1rem; }
-        .article-list { list-style: none; }
-        .article-list li {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-        }
-        .article-list a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .article-list a:hover { text-decoration: underline; }
-        .article-list p { color: #555; font-size: 0.9rem; margin-top: 0.25rem; }
-        .pricing { margin: 2rem 0; }
-        .pricing h2 { margin-bottom: 1rem; }
-        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
-        .pricing-card {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        .pricing-card h3 { color: #2563eb; margin-bottom: 0.5rem; }
-        .pricing-card .price { font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0; }
-        .pricing-card ul { list-style: none; text-align: left; font-size: 0.9rem; color: #555; }
-        .pricing-card ul li { margin-bottom: 0.25rem; }
-        .lead-capture {
-            background: #0f172a;
-            color: white;
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        .lead-capture h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
-        .lead-capture .lead-subtext { color: #94a3b8; font-size: 1rem; margin-bottom: 1.5rem; }
-        .lead-capture form {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        .lead-capture input[type="email"] {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 1px solid #334155;
-            border-radius: 6px;
-            background: #1e293b;
-            color: white;
-            font-size: 1rem;
-        }
-        .lead-capture input[type="email"]::placeholder { color: #64748b; }
-        .lead-capture input[type="email"]:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
-        .lead-capture button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        .lead-capture button:hover { background: #1d4ed8; }
-        .lead-capture .lead-note { color: #64748b; font-size: 0.8rem; margin-top: 1rem; }
+        footer { text-align: center; padding: 2rem 0 1rem; color: #777; font-size: 0.875rem; }
         @media (max-width: 600px) {
-            .lead-capture form { flex-direction: column; }
-        }
-        footer { text-align: center; padding: 2rem; color: #777; font-size: 0.875rem; }
-        @media (max-width: 600px) {
-            .services { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
             h1 { font-size: 2rem; }
         }
     </style>
@@ -143,116 +67,83 @@
     <div class="container">
         <header>
             <h1>Priyansh Kansara</h1>
-            <p class="tagline">Technical Writer & WhatsApp Automation Developer</p>
-            <p class="subtitle">Helping Indian businesses automate communication and developer platforms tell their story.</p>
+            <p class="tagline">Applied ML &amp; Embedded Systems</p>
+            <p class="subtitle">2nd-year Electronics &amp; Telecommunication @ KJ Somaiya College of Engineering · CGPA 9.15/10 · Mumbai, India</p>
+            <div class="badges">
+                <span class="badge">58.6K lines of Python</span>
+                <span class="badge">909 tests</span>
+                <span class="badge">3 merged OSS PRs</span>
+                <span class="badge">9 PRs under review</span>
+            </div>
         </header>
 
-        <div class="services">
-            <div class="service-card">
-                <h3>WhatsApp Automation</h3>
-                <p>Chatbot setup, auto-replies, broadcast messaging, and COD confirmation flows for coaching institutes, D2C brands, and clinics.</p>
+        <section>
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3><a href="https://github.com/DawnofGenX/vishwas">Vishwas</a></h3>
+                <p class="meta">Zero-cloud verification platform · ~34K LoC · 445 tests</p>
+                <p>Users message a number on WhatsApp; URLs, executables/APKs, documents (OCR) and images/audio get checked and answered with a plain-language verdict plus a confidence band, in 7 languages. Runs CPU-only on an i5 laptop — no cloud calls. Routing decisions are deterministic; an LLM only narrates already-finished verdicts, behind a prompt-injection guard.</p>
             </div>
-            <div class="service-card">
-                <h3>Technical Writing</h3>
-                <p>Tutorials, documentation, and how-to guides for developer platforms. Published on dev.to and partner publications.</p>
+
+            <div class="project">
+                <h3><a href="https://github.com/DawnofGenX/uartscope">UARTScope</a></h3>
+                <p class="meta">"Wireshark for microcontrollers" · ~13.9K LoC · 160 tests</p>
+                <p>Bidirectional UART/I²C/SPI/CAN/Modbus decoders, CAN from vendor DBC files, live charts, threshold alerts, session record/replay with golden-baseline diffing, a plugin marketplace, and an MQTT bridge to existing dashboards. Pure Python, ~50 REST/WebSocket routes, GitHub Actions CI.</p>
             </div>
-        </div>
+
+            <div class="project">
+                <h3><a href="https://github.com/DawnofGenX/citesure">CiteSure</a></h3>
+                <p class="meta">Local citation verifier · ~9.7K LoC · 288 tests</p>
+                <p>Checks whether a cited source actually <em>supports</em> a claim, not just whether the link is alive — three tiers from deterministic link/status checks through content extraction to an opt-in NLI cross-encoder. Flags dead, retracted and paywalled sources. Abstention is a first-class output: unverifiable claims return "can't verify" instead of a hallucinated verdict.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://github.com/DawnofGenX/blind-mcp">blind-mcp</a></h3>
+                <p class="meta">Company-research MCP server · ~1K LoC · 16 tests</p>
+                <p>An MCP server for researching companies on Blind, built on an upstream MIT scaffold and extended: ranked thread search against a natural-language question, with employer-tag and date provenance preserved on anonymous posts.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Open source</h2>
+            <div class="oss">
+                <strong>3 merged PRs</strong> into PyPA-ecosystem tooling:
+                <ul>
+                    <li><a href="https://github.com/tox-dev/filelock/pull/752">tox-dev/filelock#752</a> — <code>fix(read-write)</code>: honor instance defaults</li>
+                    <li><a href="https://github.com/tox-dev/filelock/pull/751">tox-dev/filelock#751</a> — <code>fix(marker)</code>: preserve live owners</li>
+                    <li><a href="https://github.com/pypa/pipx/pull/2041">pypa/pipx#2041</a> — <code>fix(upgrade)</code>: don't claim "latest version" for local-path installs</li>
+                </ul>
+                <p class="note">9 more open and under review at pytest, pytest-xdist, pandas, Hugging Face diffusers, the MCP reference servers, LMCache and Axl.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience &amp; education</h2>
+            <div class="exp">
+                <strong>AI Product Intern — ACSE</strong> (Jun–Jul 2025)
+                <ul>
+                    <li>Replaced a company chatbot's keyword-search routing with LLM response classification on a small Llama foundation model, evaluated against real user queries.</li>
+                    <li>Added OCR + metadata extraction for document inputs; iterated on response accuracy.</li>
+                </ul>
+                <p style="margin-top:1rem;"><strong>B.Tech, Electronics &amp; Telecommunication</strong> — KJ Somaiya College of Engineering, 2025–2029, CGPA 9.15/10</p>
+                <p><strong>IBCP Diploma in Artificial Intelligence</strong> — Elpro International School, 2023–2025 (capstone: waste-type classification model for automated recycling)</p>
+            </div>
+        </section>
 
         <div class="cta">
-            <a href="mailto:pkansara0412@gmail.com" class="btn">Email Me</a>
-            <a href="https://dev.to/dawnofgenx" class="btn btn-outline">Read My Articles</a>
-        </div>
-
-        <div class="pricing">
-            <h2>WhatsApp Automation Services</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <p class="price">₹5,000</p>
-                    <ul>
-                        <li>WhatsApp chatbot setup</li>
-                        <li>Auto-replies & welcome messages</li>
-                        <li>Basic conversation flows</li>
-                        <li>7 days free support</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h3>Standard</h3>
-                    <p class="price">₹8,000</p>
-                    <ul>
-                        <li>Everything in Basic</li>
-                        <li>Broadcast messaging</li>
-                        <li>Order confirmation flows</li>
-                        <li>Google Sheets/CRM integration</li>
-                        <li>14 days free support</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h3>Premium</h3>
-                    <p class="price">₹12,000+</p>
-                    <ul>
-                        <li>Everything in Standard</li>
-                        <li>Custom integrations</li>
-                        <li>Multi-language support</li>
-                        <li>Advanced analytics</li>
-                        <li>30 days free support</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="articles">
-            <h2>Recent Articles</h2>
-            <ul class="article-list">
-                <li>
-                    <a href="https://dev.to/dawnofgenx/getting-started-with-the-whatsapp-business-api-a-complete-guide-for-developers-1gmo">Getting Started with the WhatsApp Business API</a>
-                    <p>A complete guide for Indian developers and SMB owners. Learn how to set up your account, send messages, and build chatbots.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/how-to-build-a-whatsapp-chatbot-with-python-a-step-by-step-tutorial-4ekb">How to Build a WhatsApp Chatbot with Python</a>
-                    <p>Step-by-step tutorial with code examples. Build a working chatbot in 30 minutes.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/whatsapp-business-api-pricing-in-india-complete-cost-breakdown-for-2026-120e">WhatsApp Business API Pricing in India</a>
-                    <p>Complete cost breakdown for Indian businesses in 2026. Learn about conversation pricing, free tier, and real-world cost examples.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/how-to-send-whatsapp-broadcast-messages-at-scale-with-python-19b1">How to Send WhatsApp Broadcast Messages at Scale with Python</a>
-                    <p>Learn how to send broadcast messages to thousands of contacts using Python and the WhatsApp Business API.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/whatsapp-business-api-vs-wati-vs-interakt-vs-aisensy-what-should-an-indian-smb-actually-choose-3i8b">WhatsApp Business API vs WATI vs Interakt vs AiSensy</a>
-                    <p>An honest comparison of WhatsApp platforms for Indian SMBs — pricing, features, and what you should actually choose.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/building-a-cod-confirmation-bot-for-indian-d2c-brands-with-whatsapp-full-code-1mh4">Building a COD Confirmation Bot for Indian D2C Brands</a>
-                    <p>Full code walkthrough for building a COD confirmation bot with WhatsApp that reduces RTO for D2C brands.</p>
-                </li>
-                <li>
-                    <a href="https://dev.to/dawnofgenx/how-to-integrate-whatsapp-business-api-with-google-sheets-free-step-by-step-4ddl">How to Integrate WhatsApp Business API with Google Sheets</a>
-                    <p>Free, step-by-step guide to log and manage WhatsApp conversations in Google Sheets using Apps Script.</p>
-                </li>
-            </ul>
+            <a href="https://www.linkedin.com/in/priyansh-kansara-a35826368/" class="btn">LinkedIn</a>
+            <a href="https://github.com/DawnofGenX" class="btn btn-outline">GitHub</a>
+            <a href="mailto:pkansara0412@gmail.com" class="btn btn-outline">Email</a>
         </div>
 
         <div class="links">
+            <a href="https://github.com/DawnofGenX/devlog">Devlog</a>
             <a href="https://dev.to/dawnofgenx">dev.to</a>
-            <a href="https://github.com/DawnofGenX">GitHub</a>
-            <a href="mailto:pkansara0412@gmail.com">Email</a>
-        </div>
-
-        <div class="lead-capture" id="lead-capture">
-            <h2>Get the Free WhatsApp Automation Guide</h2>
-            <p class="lead-subtext">Learn how Indian businesses are saving 10+ hours/week with WhatsApp automation.</p>
-            <form action="mailto:pkansara0412@gmail.com" method="post" enctype="text/plain">
-                <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address">
-                <button type="submit">Get Free Guide</button>
-            </form>
-            <p class="lead-note">No spam. Unsubscribe anytime.</p>
         </div>
 
         <footer>
-            <p>Based in India · Available for remote work</p>
+            <p>Open to ML-engineer internships in applied ML, LLM inference / edge deployment, or Physical AI · 3-week windows from mid-Dec 2026</p>
         </footer>
     </div>
 </body>
