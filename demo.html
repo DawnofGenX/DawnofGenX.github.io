@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WaFlow — WhatsApp automation demo (81s)</title>
+<meta name="description" content="81-second product demo of WaFlow, a WhatsApp automation platform for Indian D2C businesses. Built and narrated by Priyansh Kansara.">
+<style>
+  :root { --bg:#0b1020; --panel:#141c31; --line:#253048; --ink:#eef2f9; --muted:#9fb0c9; --green:#25d366; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55; padding: 2.5rem 1.25rem 4rem;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  a { color: var(--green); }
+  .tag {
+    display: inline-block; font-size: .78rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--green);
+    border: 1px solid #1f5c3d; border-radius: 999px; padding: .2rem .6rem;
+  }
+  h1 { font-size: 1.9rem; margin: .9rem 0 .3rem; letter-spacing: -.02em; }
+  .lede { color: var(--muted); margin: 0 0 1.8rem; }
+  .player {
+    background: #000; border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  }
+  video { width: 100%; display: block; }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.4rem;
+    color: var(--muted); font-size: .88rem; margin: .9rem 0 2rem;
+  }
+  h2 { font-size: 1.05rem; margin: 2rem 0 .6rem; }
+  ul { padding-left: 1.15rem; color: var(--muted); }
+  li { margin-bottom: .35rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.1rem 1.25rem; margin: 1.6rem 0;
+  }
+  .panel strong { color: var(--ink); }
+  .cta { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+  .btn {
+    display: inline-block; padding: .6rem 1.1rem; border-radius: 8px;
+    background: var(--green); color: #06231a; font-weight: 600;
+    text-decoration: none; font-size: .92rem;
+  }
+  .btn.outline { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .85rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="tag">Product demo · 81 seconds</span>
+  <h1>WaFlow — WhatsApp automation for D2C</h1>
+  <p class="lede">
+    An 81-second walkthrough of a WhatsApp automation platform: keyword rules,
+    a visual flow builder, bulk broadcasts, AI replies with human handoff, and a
+    shared team inbox.
+  </p>
+
+  <div class="player">
+    <video controls preload="metadata" playsinline
+           poster="assets/waflow-poster.jpg">
+      <source src="assets/waflow-demo.mp4" type="video/mp4">
+      Your browser cannot play this MP4.
+      <a href="assets/waflow-demo.mp4">Download the video instead.</a>
+    </video>
+  </div>
+
+  <div class="meta">
+    <span>81s</span><span>1920&times;1080</span><span>H.264 / AAC</span>
+    <span>Burned captions</span><span>English, Indian market</span>
+  </div>
+
+  <h2>What it shows</h2>
+  <ul>
+    <li>QR onboarding — link a WhatsApp Business number in about five minutes</li>
+    <li>Keyword-triggered auto-replies with reply-count tracking</li>
+    <li>Visual multi-step flow builder — no code required</li>
+    <li>Bulk broadcasts with recipient, sent, and delivery counts</li>
+    <li>AI replies that hand off to a human when a query needs a person</li>
+    <li>Shared team inbox with role-based access</li>
+  </ul>
+
+  <div class="panel">
+    <strong>How this was made.</strong> Every frame is my own build — the
+    product interface, the demo data, and the video pipeline (rendering, captions,
+    audio mix) are all things I built rather than stock footage or a third-party
+    template. The voiceover is synthetic; I generated it locally per caption
+    chunk so the burned captions line up with the spoken words exactly.
+  </div>
+
+  <h2>Interested in this for your business?</h2>
+  <p style="color:var(--muted)">
+    I take on a small number of WhatsApp automation projects at a time — a
+    two-week paid pilot on a single flow, fixed price, no lock-in.
+  </p>
+  <div class="cta">
+    <a class="btn" href="mailto:pkansara0412@gmail.com?subject=WhatsApp%20automation%20pilot">Email me</a>
+    <a class="btn outline" href="https://dawnofgenx.github.io">Portfolio</a>
+    <a class="btn outline" href="https://dev.to/dawnofgenx">Articles</a>
+  </div>
+
+  <footer>
+    Priyansh Kansara · <a href="https://github.com/DawnofGenX">github.com/DawnofGenX</a>
+    · <a href="mailto:pkansara0412@gmail.com">pkansara0412@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
