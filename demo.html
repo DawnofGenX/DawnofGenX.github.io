@@ -158,8 +158,6 @@ a { color: var(--accent-ink); text-underline-offset: .18em; }
   border: 1px solid var(--line);
 }
 .player video { width: 100%; aspect-ratio: 16 / 9; background: #000; }
-.fallback { padding: var(--s-4); color: #fff; font: var(--t-sm) system-ui, sans-serif; }
-.fallback a { color: #3ddc97; }
 
 /* Under-player meta strip */
 .meta { margin-top: var(--s-4); font-size: var(--t-sm); color: var(--ink-3); }
@@ -316,10 +314,8 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
              poster="assets/waflow-poster.jpg"
              aria-label="WaFlow product demo: WhatsApp automation for D2C brands">
         <source src="assets/waflow-demo.mp4" type="video/mp4">
-        <p class="fallback">
-          Your browser can&rsquo;t play this MP4.
-          <a href="assets/waflow-demo.mp4">Download the video</a> instead.
-        </p>
+        Your browser can&rsquo;t play this MP4 &mdash;
+        <a href="assets/waflow-demo.mp4">download the video</a> instead.
       </video>
     </div>
 
