@@ -1,156 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyansh Kansara — Applied ML &amp; Embedded Systems</title>
-    <meta name="description" content="Applied ML and embedded systems engineer. Builds CPU-only verification and telemetry tools in Python. 3 merged OSS PRs to filelock and pipx; open PRs at pytest, pandas, LMCache.">
-    <meta property="og:title" content="Priyansh Kansara — Applied ML &amp; Embedded Systems">
-    <meta property="og:description" content="CPU-only verification and telemetry tools in Python. 3 merged OSS PRs to filelock and pipx; open PRs at pytest, pandas, LMCache.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dawnofgenx.github.io">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #fafafa;
-        }
-        .container { max-width: 860px; margin: 0 auto; padding: 2rem; }
-        header { text-align: center; padding: 3.5rem 0 1.5rem; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .tagline { font-size: 1.25rem; color: #555; margin-bottom: 1rem; }
-        .subtitle { color: #666; font-size: 1rem; }
-        .badges { margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .badge {
-            background: #0f172a; color: #e2e8f0; border-radius: 999px;
-            padding: 0.3rem 0.9rem; font-size: 0.85rem;
-        }
-        section { margin: 2.75rem 0; }
-        h2 { font-size: 1.4rem; margin-bottom: 1rem; }
-        .project {
-            background: white; border: 1px solid #e5e5e5; border-radius: 8px;
-            padding: 1.25rem 1.5rem; margin-bottom: 1rem;
-        }
-        .project h3 { margin-bottom: 0.15rem; color: #2563eb; }
-        .project h3 a { color: #2563eb; text-decoration: none; }
-        .project h3 a:hover { text-decoration: underline; }
-        .project .meta { color: #777; font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .project p { color: #444; font-size: 0.95rem; }
-        .oss { background: white; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; }
-        .oss ul { margin: 0.6rem 0 0 1.1rem; }
-        .oss li { margin-bottom: 0.3rem; font-size: 0.95rem; }
-        .oss .note { margin-top: 0.9rem; color: #666; font-size: 0.9rem; font-style: italic; }
-        .exp { background: white; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; }
-        .exp ul { margin: 0.5rem 0 0 1.1rem; }
-        .exp li { margin-bottom: 0.35rem; font-size: 0.95rem; }
-        .cta { text-align: center; margin: 2.5rem 0; }
-        .btn {
-            display: inline-block; background: #2563eb; color: white;
-            padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none;
-            font-weight: 500; margin: 0.4rem;
-        }
-        .btn:hover { background: #1d4ed8; }
-        .btn-outline { background: transparent; color: #2563eb; border: 2px solid #2563eb; }
-        .btn-outline:hover { background: #eff6ff; }
-        .links { text-align: center; margin: 2rem 0; }
-        .links a { color: #2563eb; text-decoration: none; margin: 0 0.9rem; }
-        .links a:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 2rem 0 1rem; color: #777; font-size: 0.875rem; }
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Priyansh Kansara — WhatsApp automation &amp; applied ML</title>
+<meta name="description" content="I build WhatsApp automation for Indian D2C brands, and CPU-only verification and telemetry tools in Python. 3 merged OSS PRs to filelock and pipx; shipped WhatsApp automation product with an 81-second demo.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Priyansh Kansara — WhatsApp automation &amp; applied ML">
+<meta property="og:description" content="WhatsApp automation for Indian D2C brands. Plus CPU-only verification and telemetry tooling in Python.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawnofgenx.github.io">
+
+<style>
+/* ============================================================
+   Design tokens — shared with /demo.html
+   ============================================================ */
+:root {
+  --bg:          #fbfbfd;
+  --bg-elev:     #ffffff;
+  --bg-sunken:   #f5f5f7;
+  --line:        #e5e5ea;
+  --line-strong: #d2d2d7;
+
+  --ink:         #1d1d1f;   /* 16.3:1 on --bg */
+  --ink-2:       #424245;   /* 9.7:1  */
+  --ink-3:       #6e6e73;   /* 4.9:1  */
+  --ink-4:       #86868b;   /* large text / non-text only */
+
+  /* White button text on --accent = 6.04:1 (AA) */
+  --accent:      #0d6f64;
+  --accent-ink:  #0b5f55;
+  --accent-wash: #e8f6f2;
+  --accent-line: #b6e2d8;
+
+  --r-sm: 8px; --r-md: 12px; --r-lg: 20px;
+  --sh-1: 0 1px 2px rgba(0,0,0,.05), 0 1px 8px rgba(0,0,0,.04);
+  --sh-2: 0 8px 30px rgba(0,0,0,.09), 0 2px 8px rgba(0,0,0,.05);
+  --ease: cubic-bezier(.32,.72,0,1);
+
+  --t-xs: 0.8125rem; --t-sm: 0.9375rem; --t-base: 1.0625rem;
+  --t-lg: clamp(1.125rem, 1.05rem + .35vw, 1.3125rem);
+  --t-xl: clamp(1.375rem, 1.2rem + .8vw, 1.875rem);
+  --t-2xl: clamp(1.75rem, 1.4rem + 1.7vw, 2.75rem);
+  --t-3xl: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem;
+  --s-5: 1.5rem; --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 5.5rem;
+
+  --measure: 36rem;
+  --page: 68rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0d; --bg-elev: #17171a; --bg-sunken: #101013;
+    --line: #2a2a2f; --line-strong: #3a3a41;
+    --ink: #f5f5f7; --ink-2: #c9c9ce; --ink-3: #9a9aa0; --ink-4: #7c7c82;
+    --accent: #3ddc97; --accent-ink: #6ee7b7;
+    --accent-wash: #0e2a22; --accent-line: #1d4c3c;
+    --sh-1: 0 1px 2px rgba(0,0,0,.4);
+    --sh-2: 0 10px 40px rgba(0,0,0,.5);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; transition-duration: .01ms !important;
+  }
+}
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+               "Inter", system-ui, sans-serif;
+  font-size: var(--t-base); line-height: 1.55; letter-spacing: -.011em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  padding: 0 var(--s-4) var(--s-8);
+}
+a { color: var(--accent-ink); text-underline-offset: .18em; }
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;
+}
+.skip {
+  position: absolute; left: var(--s-4); top: -4rem; z-index: 99;
+  background: var(--bg-elev); color: var(--ink); padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+  box-shadow: var(--sh-2); font-weight: 600; text-decoration: none;
+  transition: top .18s var(--ease);
+}
+.skip:focus { top: var(--s-4); }
+.page { max-width: var(--page); margin: 0 auto; }
+
+/* ---------- hero ---------- */
+.hero { padding: clamp(var(--s-7), 8vw, var(--s-9)) 0 var(--s-6); }
+.hero .eyebrow {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-size: var(--t-xs); font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--accent-ink);
+  background: var(--accent-wash); border: 1px solid var(--accent-line);
+  padding: .3rem .7rem; border-radius: 999px;
+}
+.hero h1 {
+  font-size: var(--t-3xl); line-height: 1.05; letter-spacing: -.032em;
+  font-weight: 700; margin: var(--s-4) 0; text-wrap: balance; max-width: 20ch;
+}
+.hero h1 .sub { display: block; color: var(--ink-3); font-weight: 600; }
+.hero .lede {
+  font-size: var(--t-lg); color: var(--ink-2);
+  max-width: var(--measure); text-wrap: pretty;
+}
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+.facts {
+  list-style: none; display: flex; flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4); margin: var(--s-5) 0 0; padding: 0;
+}
+.facts li {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-size: var(--t-sm); color: var(--ink-3);
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: 999px; padding: .3rem .8rem;
+}
+.facts b { color: var(--ink-2); font-weight: 650; font-variant-numeric: tabular-nums; }
+
+/* ---------- sections ---------- */
+section { padding: var(--s-7) 0; border-top: 1px solid var(--line); }
+.sec-head { max-width: var(--measure); margin-bottom: var(--s-5); }
+h2 {
+  font-size: var(--t-2xl); line-height: 1.1; letter-spacing: -.026em;
+  font-weight: 700; margin-bottom: var(--s-3); text-wrap: balance;
+}
+.sec-head p { color: var(--ink-2); font-size: var(--t-lg); text-wrap: pretty; }
+
+/* ---------- feature / service card ---------- */
+.grid { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+.card {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: var(--s-5);
+  display: flex; flex-direction: column;
+  transition: transform .32s var(--ease), box-shadow .32s var(--ease),
+              border-color .32s var(--ease);
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--sh-1); border-color: var(--line-strong); }
+.card h3 { font-size: var(--t-lg); font-weight: 650; letter-spacing: -.014em; margin-bottom: var(--s-2); }
+.card p { color: var(--ink-3); font-size: var(--t-sm); }
+.card .label {
+  font-size: var(--t-xs); font-weight: 650; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s-2);
+}
+.card .foot {
+  margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--line);
+  font-size: var(--t-sm); font-weight: 600;
+}
+.card.featured {
+  border-color: var(--accent-line);
+  background: linear-gradient(180deg, var(--accent-wash), var(--bg-elev) 58%);
+}
+
+/* ---------- project list ---------- */
+.proj {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: var(--s-5);
+  margin-bottom: var(--s-3);
+  transition: border-color .32s var(--ease), box-shadow .32s var(--ease);
+}
+.proj:hover { border-color: var(--line-strong); box-shadow: var(--sh-1); }
+.proj h3 { font-size: var(--t-base); font-weight: 650; letter-spacing: -.012em; }
+.proj h3 a { text-decoration: none; }
+.proj h3 a:hover { text-decoration: underline; }
+.proj .meta {
+  font-size: var(--t-xs); color: var(--ink-3); margin: var(--s-1) 0 var(--s-2);
+  font-variant-numeric: tabular-nums;
+}
+.proj p { color: var(--ink-3); font-size: var(--t-sm); max-width: 62ch; }
+.proj code {
+  background: var(--bg-sunken); border: 1px solid var(--line);
+  border-radius: 5px; padding: .05em .35em;
+  font-family: ui-monospace, "SF Mono", "DejaVu Sans Mono", monospace;
+  font-size: .92em;
+}
+
+/* ---------- lists ---------- */
+.panel {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: var(--s-5);
+}
+.panel ul { list-style: none; padding: 0; margin: var(--s-3) 0 0; }
+.panel li {
+  font-size: var(--t-sm); color: var(--ink-2);
+  padding: var(--s-2) 0; border-top: 1px solid var(--line);
+}
+.panel li:first-child { border-top: 0; }
+.panel .note { margin-top: var(--s-3); color: var(--ink-3); font-size: var(--t-sm); }
+
+/* ---------- CTA ---------- */
+.cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: .7rem 1.25rem; border-radius: 999px;
+  font-size: var(--t-sm); font-weight: 600; letter-spacing: -.01em;
+  text-decoration: none; white-space: nowrap; border: 1px solid transparent;
+  transition: background .18s var(--ease), transform .18s var(--ease);
+}
+.btn:active { transform: scale(.985); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-ink); }
+@media (prefers-color-scheme: dark) { .btn-primary { color: #06231a; } }
+.btn-secondary { background: var(--bg-elev); color: var(--ink); border-color: var(--line-strong); }
+.btn-secondary:hover { background: var(--bg-sunken); }
+
+footer {
+  margin-top: var(--s-7); padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5);
+  align-items: center; justify-content: space-between;
+  font-size: var(--t-sm); color: var(--ink-3);
+}
+footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
+
+@media (max-width: 40rem) {
+  :root { --page: 100%; }
+  .hero h1 { max-width: none; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Priyansh Kansara</h1>
-            <p class="tagline">Applied ML &amp; Embedded Systems</p>
-            <p class="subtitle">2nd-year Electronics &amp; Telecommunication @ KJ Somaiya College of Engineering · CGPA 9.15/10 · Mumbai, India</p>
-            <div class="badges">
-                <span class="badge">58.6K lines of Python</span>
-                <span class="badge">909 tests</span>
-                <span class="badge">3 merged OSS PRs</span>
-                <span class="badge">9 PRs under review</span>
-            </div>
-        </header>
+<a class="skip" href="#main">Skip to content</a>
 
-        <section>
-            <h2>Projects</h2>
+<div class="page">
 
-            <div class="project">
-                <h3><a href="https://github.com/DawnofGenX/vishwas">Vishwas</a></h3>
-                <p class="meta">Zero-cloud verification platform · ~34K LoC · 445 tests</p>
-                <p>Users message a number on WhatsApp; URLs, executables/APKs, documents (OCR) and images/audio get checked and answered with a plain-language verdict plus a confidence band, in 7 languages. Runs CPU-only on an i5 laptop — no cloud calls. Routing decisions are deterministic; an LLM only narrates already-finished verdicts, behind a prompt-injection guard.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://github.com/DawnofGenX/uartscope">UARTScope</a></h3>
-                <p class="meta">"Wireshark for microcontrollers" · ~13.9K LoC · 160 tests</p>
-                <p>Bidirectional UART/I²C/SPI/CAN/Modbus decoders, CAN from vendor DBC files, live charts, threshold alerts, session record/replay with golden-baseline diffing, a plugin marketplace, and an MQTT bridge to existing dashboards. Pure Python, ~50 REST/WebSocket routes, GitHub Actions CI.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://github.com/DawnofGenX/citesure">CiteSure</a></h3>
-                <p class="meta">Local citation verifier · ~9.7K LoC · 288 tests</p>
-                <p>Checks whether a cited source actually <em>supports</em> a claim, not just whether the link is alive — three tiers from deterministic link/status checks through content extraction to an opt-in NLI cross-encoder. Flags dead, retracted and paywalled sources. Abstention is a first-class output: unverifiable claims return "can't verify" instead of a hallucinated verdict.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://github.com/DawnofGenX/blind-mcp">blind-mcp</a></h3>
-                <p class="meta">Company-research MCP server · ~1K LoC · 16 tests</p>
-                <p>An MCP server for researching companies on Blind, built on an upstream MIT scaffold and extended: ranked thread search against a natural-language question, with employer-tag and date provenance preserved on anonymous posts.</p>
-            </div>
-            <div class="project">
-                <h3><a href="https://dawnofgenx.github.io/demo.html">WaFlow - WhatsApp automation</a></h3>
-                <p class="meta">Product + 81s demo video - deployed, not a mockup</p>
-                <p>WhatsApp automation platform for Indian D2C brands: keyword rules, visual flow builder, bulk broadcasts, AI replies with human handoff, shared team inbox. The 81-second demo is my own build, end to end.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Open source</h2>
-            <div class="oss">
-                <strong>3 merged PRs</strong> into PyPA-ecosystem tooling:
-                <ul>
-                    <li><a href="https://github.com/tox-dev/filelock/pull/752">tox-dev/filelock#752</a> — <code>fix(read-write)</code>: honor instance defaults</li>
-                    <li><a href="https://github.com/tox-dev/filelock/pull/751">tox-dev/filelock#751</a> — <code>fix(marker)</code>: preserve live owners</li>
-                    <li><a href="https://github.com/pypa/pipx/pull/2041">pypa/pipx#2041</a> — <code>fix(upgrade)</code>: don't claim "latest version" for local-path installs</li>
-                </ul>
-                <p class="note">9 more open and under review at pytest, pytest-xdist, pandas, Hugging Face diffusers, the MCP reference servers, LMCache and Axl.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Experience &amp; education</h2>
-            <div class="exp">
-                <strong>AI Product Intern — ACSE</strong> (Jun–Jul 2025)
-                <ul>
-                    <li>Replaced a company chatbot's keyword-search routing with LLM response classification on a small Llama foundation model, evaluated against real user queries.</li>
-                    <li>Added OCR + metadata extraction for document inputs; iterated on response accuracy.</li>
-                </ul>
-                <p style="margin-top:1rem;"><strong>B.Tech, Electronics &amp; Telecommunication</strong> — KJ Somaiya College of Engineering, 2025–2029, CGPA 9.15/10</p>
-                <p><strong>IBCP Diploma in Artificial Intelligence</strong> — Elpro International School, 2023–2025 (capstone: waste-type classification model for automated recycling)</p>
-            </div>
-        </section>
-
-        <div class="cta">
-            <a href="https://www.linkedin.com/in/priyansh-kansara-a35826368/" class="btn">LinkedIn</a>
-            <a href="https://github.com/DawnofGenX" class="btn btn-outline">GitHub</a>
-            <a href="mailto:pkansara0412@gmail.com" class="btn btn-outline">Email</a>
-        </div>
-
-        <div class="links">
-            <a href="https://github.com/DawnofGenX/devlog">Devlog</a>
-            <a href="https://dawnofgenx.github.io/demo.html">WaFlow demo</a>
-            <a href="https://dev.to/dawnofgenx">dev.to</a>
-        </div>
-
-        <footer>
-            <p>Open to ML-engineer internships in applied ML, LLM inference / edge deployment, or Physical AI · 3-week windows from mid-Dec 2026</p>
-        </footer>
+  <header class="hero">
+    <span class="eyebrow">Available for new automation projects</span>
+    <h1>
+      WhatsApp automation for Indian D2C brands
+      <span class="sub">and the Python tooling behind it</span>
+    </h1>
+    <p class="lede">
+      I build the automation that answers order questions, sends delay alerts and
+      runs campaigns &mdash; starting with a <strong>two-week paid pilot</strong> on
+      one flow. I also write CPU-only verification and telemetry tools in Python.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:pkansara0412@gmail.com?subject=WhatsApp%20automation%20pilot">Start a pilot conversation</a>
+      <a class="btn btn-secondary" href="demo.html">Watch the 81-second demo</a>
     </div>
+    <ul class="facts">
+      <li><b>58.6K</b> lines of Python</li>
+      <li><b>909</b> tests</li>
+      <li><b>3</b> merged OSS PRs</li>
+      <li><b>9</b> PRs under review</li>
+      <li>CGPA <b>9.15</b>/10</li>
+    </ul>
+  </header>
+
+  <main id="main">
+
+    <section aria-labelledby="service">
+      <div class="sec-head">
+        <h2 id="service">How I can help</h2>
+        <p>Two ways to work together, depending on what you need.</p>
+      </div>
+      <div class="grid">
+        <article class="card featured">
+          <span class="label">For D2C brands</span>
+          <h3>WhatsApp automation</h3>
+          <p>
+            Order confirmations, delivery-delay alerts, keyword replies, segmented
+            broadcasts and AI replies that hand off to a person. I have shipped and
+            run the product &mdash; the demo above is a recording of a live
+            deployment, not a mockup.
+          </p>
+          <p class="foot">Pilot from &#8377;6,000 &middot; fixed price &middot; no lock-in</p>
+        </article>
+        <article class="card">
+          <span class="label">For engineering teams</span>
+          <h3>Python tooling &amp; open source</h3>
+          <p>
+            Verification, telemetry and device-facing tooling that runs CPU-only.
+            Three merged PRs into PyPA-ecosystem packages, with nine more in review
+            across pytest, pandas, Hugging Face and the MCP reference servers.
+          </p>
+          <p class="foot">Open to ML-engineer internships from mid-Dec 2026</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="projects">
+      <div class="sec-head">
+        <h2 id="projects">Selected projects</h2>
+        <p>Things I built, with the numbers that matter.</p>
+      </div>
+
+      <article class="proj">
+        <h3><a href="demo.html">WaFlow &mdash; WhatsApp automation</a></h3>
+        <p class="meta">Deployed product &middot; 81-second demo video</p>
+        <p>
+          Keyword rules, a visual flow builder, bulk broadcasts, AI replies with
+          human handoff and a shared team inbox. The interface, the demo data and
+          the video pipeline are all my own work.
+        </p>
+      </article>
+
+      <article class="proj">
+        <h3><a href="https://github.com/DawnofGenX/vishwas">Vishwas</a></h3>
+        <p class="meta">Zero-cloud verification platform &middot; ~34K LoC &middot; 445 tests</p>
+        <p>
+          Users message a number on WhatsApp; URLs, executables/APKs, documents (OCR)
+          and images/audio get checked and answered with a plain-language verdict
+          plus a confidence band, in 7 languages. Runs CPU-only on an i5 laptop
+          &mdash; no cloud calls. Routing is deterministic; an LLM only narrates
+          already-finished verdicts, behind a prompt-injection guard.
+        </p>
+      </article>
+
+      <article class="proj">
+        <h3><a href="https://github.com/DawnofGenX/uartscope">UARTScope</a></h3>
+        <p class="meta">&ldquo;Wireshark for microcontrollers&rdquo; &middot; ~13.9K LoC &middot; 160 tests</p>
+        <p>
+          Bidirectional UART/I&sup2;C/SPI/CAN/Modbus decoders, CAN from vendor DBC
+          files, live charts, threshold alerts, session record/replay with
+          golden-baseline diffing, a plugin marketplace, and an MQTT bridge to
+          existing dashboards. Pure Python, ~50 REST/WebSocket routes, CI on every push.
+        </p>
+      </article>
+
+      <article class="proj">
+        <h3><a href="https://github.com/DawnofGenX/citesure">CiteSure</a></h3>
+        <p class="meta">Local citation verifier &middot; ~9.7K LoC &middot; 288 tests</p>
+        <p>
+          Checks whether a cited source actually <em>supports</em> a claim, not just
+          whether the link is alive &mdash; three tiers from deterministic link/status
+          checks through content extraction to an opt-in NLI cross-encoder. Flags
+          dead, retracted and paywalled sources. Abstention is a first-class output:
+          unverifiable claims return &ldquo;can&rsquo;t verify&rdquo; instead of a
+          hallucinated verdict.
+        </p>
+      </article>
+
+      <article class="proj">
+        <h3><a href="https://github.com/DawnofGenX/blind-mcp">blind-mcp</a></h3>
+        <p class="meta">Company-research MCP server &middot; ~1K LoC &middot; 16 tests</p>
+        <p>
+          An MCP server for researching companies on Blind, built on an upstream MIT
+          scaffold and extended: ranked thread search against a natural-language
+          question, with employer-tag and date provenance preserved on anonymous posts.
+        </p>
+      </article>
+    </section>
+
+    <section aria-labelledby="oss">
+      <div class="sec-head">
+        <h2 id="oss">Open source</h2>
+        <p>Contributions to packages other people depend on.</p>
+      </div>
+      <div class="panel">
+        <strong>3 merged PRs</strong> into PyPA-ecosystem tooling:
+        <ul>
+          <li><a href="https://github.com/tox-dev/filelock/pull/752">tox-dev/filelock#752</a> &mdash; <code>fix(read-write)</code>: honor instance defaults</li>
+          <li><a href="https://github.com/tox-dev/filelock/pull/751">tox-dev/filelock#751</a> &mdash; <code>fix(marker)</code>: preserve live owners</li>
+          <li><a href="https://github.com/pypa/pipx/pull/2041">pypa/pipx#2041</a> &mdash; <code>fix(upgrade)</code>: don&rsquo;t claim &ldquo;latest version&rdquo; for local-path installs</li>
+        </ul>
+        <p class="note">9 more open and under review at pytest, pytest-xdist, pandas, Hugging Face diffusers, the MCP reference servers, LMCache and Axl.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="about">
+      <div class="sec-head">
+        <h2 id="about">Experience &amp; education</h2>
+      </div>
+      <div class="panel">
+        <strong>AI Product Intern &mdash; ACSE</strong> (Jun&ndash;Jul 2025)
+        <ul>
+          <li>Replaced a company chatbot&rsquo;s keyword-search routing with LLM response classification on a small Llama foundation model, evaluated against real user queries.</li>
+          <li>Added OCR + metadata extraction for document inputs; iterated on response accuracy.</li>
+        </ul>
+        <p class="note">
+          <strong>B.Tech, Electronics &amp; Telecommunication</strong> &mdash; KJ Somaiya
+          College of Engineering, 2025&ndash;2029, CGPA 9.15/10.<br>
+          <strong>IBCP Diploma in Artificial Intelligence</strong> &mdash; Elpro
+          International School, 2023&ndash;2025 (capstone: waste-type classification
+          model for automated recycling).
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Priyansh Kansara &middot; Mumbai, India</p>
+    <nav aria-label="Elsewhere">
+      <a href="mailto:pkansara0412@gmail.com">Email</a>
+      <a href="https://github.com/DawnofGenX">GitHub</a>
+      <a href="https://www.linkedin.com/in/priyansh-kansara-a35826368/">LinkedIn</a>
+      <a href="https://dev.to/dawnofgenx">Articles</a>
+      <a href="https://github.com/DawnofGenX/devlog">Devlog</a>
+    </nav>
+  </footer>
+
+</div>
 </body>
 </html>
