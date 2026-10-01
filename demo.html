@@ -275,6 +275,20 @@ h2 {
 }
 .btn-secondary:hover { background: var(--bg-sunken); }
 
+/* ---------- next steps ---------- */
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid; gap: var(--s-4); }
+.steps li { display: flex; gap: var(--s-4); align-items: flex-start; }
+.step-n {
+  flex: 0 0 auto; width: 2rem; height: 2rem; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent-wash); color: var(--accent-ink);
+  border: 1px solid var(--accent-line);
+  font-size: var(--t-sm); font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.steps h3 { font-size: var(--t-base); font-weight: 650; margin-bottom: var(--s-1); }
+.steps p { color: var(--ink-3); font-size: var(--t-sm); max-width: 56ch; }
+.fineprint { margin-top: var(--s-5); font-size: var(--t-sm); color: var(--ink-3); }
+
 /* ---------- footer ---------- */
 footer {
   margin-top: var(--s-8); padding-top: var(--s-5);
@@ -396,8 +410,10 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
 
     <section aria-labelledby="offer">
       <div class="sec-head">
-        <h2 id="offer">Working together</h2>
-        <p>I take on a small number of projects at a time, starting with a paid pilot.</p>
+        <h2 id="offer">Start with a paid pilot</h2>
+        <p>Pick one flow. I build it in two weeks on your real traffic, you keep the
+           configuration either way. If it does not save you time, you have lost
+           nothing but the fee.</p>
       </div>
       <div class="offer">
         <div class="price-card featured">
@@ -425,6 +441,47 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         <a class="btn btn-primary" href="mailto:pkansara0412@gmail.com?subject=WhatsApp%20automation%20pilot">Start a pilot conversation</a>
         <a class="btn btn-secondary" href="/">Back to portfolio</a>
       </div>
+    </section>
+
+    <section aria-labelledby="next">
+      <div class="sec-head">
+        <h2 id="next">What happens next</h2>
+        <p>No proposal theatre. Three steps, and you can stop at any of them.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <div>
+            <h3>Reply with a time</h3>
+            <p>A 20-minute call. I will ask about your order flow and tell you honestly
+               whether this is worth doing. If it is not, I will say so.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <div>
+            <h3>You pick the flow</h3>
+            <p>Usually order confirmations or delivery-delay alerts. We agree the scope
+               and the fixed price in writing before anything starts.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <div>
+            <h3>Two weeks, then a decision</h3>
+            <p>Built, tested on live traffic, then a written summary of what it
+               actually saved. Continue, or stop &mdash; you keep the configuration.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:pkansara0412@gmail.com?subject=WhatsApp%20automation%20pilot">Start a pilot conversation</a>
+        <a class="btn btn-secondary" href="/">Back to portfolio</a>
+      </div>
+      <p class="fineprint">
+        No paid clients yet. I&rsquo;d rather say that up front than dress it up
+        &mdash; ask me on the call exactly what I can and cannot evidence.
+      </p>
     </section>
 
   </main>

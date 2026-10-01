@@ -113,14 +113,17 @@ a { color: var(--accent-ink); text-underline-offset: .18em; }
 }
 .hero .lede strong { color: var(--ink); font-weight: 600; }
 .facts {
-  list-style: none; display: flex; flex-wrap: wrap;
-  gap: var(--s-2) var(--s-4); margin: var(--s-5) 0 0; padding: 0;
+  list-style: none; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, max-content));
+  justify-content: start;
+  gap: var(--s-2) var(--s-3); margin: var(--s-5) 0 0; padding: 0;
 }
 .facts li {
-  display: inline-flex; align-items: center; gap: var(--s-2);
+  display: flex; align-items: center; gap: var(--s-2);
   font-size: var(--t-sm); color: var(--ink-3);
   background: var(--bg-elev); border: 1px solid var(--line);
-  border-radius: 999px; padding: .3rem .8rem;
+  border-radius: 999px; padding: .35rem .8rem;
+  white-space: nowrap;
 }
 .facts b { color: var(--ink-2); font-weight: 650; font-variant-numeric: tabular-nums; }
 
