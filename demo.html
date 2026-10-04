@@ -217,6 +217,27 @@ h2 {
 }
 .note h3 { font-size: var(--t-sm); font-weight: 650; margin-bottom: var(--s-2); }
 .note p { color: var(--ink-2); font-size: var(--t-sm); }
+.note p + p { margin-top: var(--s-3); }
+
+/* ---------- spec-work screenshots ---------- */
+.shot {
+  margin: var(--s-5) 0 0;
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-md); overflow: hidden;
+}
+.shot img {
+  display: block; width: 100%; height: auto;
+  border-bottom: 1px solid var(--line);
+}
+.shot figcaption {
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  color: var(--ink-2); font-size: var(--t-sm);
+}
+.shots {
+  display: grid; gap: var(--s-4);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+.shots .shot { margin: var(--s-5) 0 0; }
 
 /* ---------- offer ---------- */
 .offer {
@@ -405,6 +426,53 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
           words line up exactly with what is spoken. The product is deployed and
           reachable; the demo is a recording of that deployment, not a staging mockup.
         </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="spec">
+      <div class="sec-head">
+        <h2 id="spec">Proof it actually works</h2>
+        <p>A working demo you can read, not a screenshot of a mockup.</p>
+      </div>
+      <div class="note">
+        <h3>Concept build for a dental clinic</h3>
+        <p>
+          I built a complete WhatsApp booking bot for a fictional dental clinic in
+          Pune &mdash; keyword intent routing, a slot-booking flow, out-of-hours
+          handling, and emergency triage that sends a patient to a phone call
+          instead of leaving them waiting on WhatsApp. No paid client, nothing
+          invoiced: this is a self-initiated project, and the clinic does not exist.
+        </p>
+        <p>
+          The conversation below is not scripted. Every reply is real output from
+          running the code, standard library only &mdash; no LLM, no API keys, no
+          network calls &mdash; with 46 passing tests. Read the code, run it, and you
+          get exactly what is shown here.
+        </p>
+      </div>
+      <figure class="shot">
+        <img src="assets/spec-work/conversation-1.png"
+             alt="WhatsApp conversation: a patient asks for a root canal slot at 11:47 PM, the bot offers available times, books a 6:30 PM appointment, collects a name and phone number, and confirms it."
+             loading="lazy" decoding="async">
+        <figcaption>
+          An enquiry that arrives at 11:47 PM, when the clinic is shut, is still
+          booked before midnight. When the patient asks for 6:00 and only 6:30 is
+          free, the bot says so rather than quietly moving the appointment.
+        </figcaption>
+      </figure>
+      <div class="shots">
+        <figure class="shot">
+          <img src="assets/spec-work/conversation-3.png"
+               alt="Chat showing an emergency triage reply telling a patient with severe pain and bleeding to call the clinic immediately rather than wait for a WhatsApp reply."
+               loading="lazy" decoding="async">
+          <figcaption>Emergency triage routes to a call, not a queue.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/spec-work/conversation-2.png"
+               alt="Chat showing a price question answered with a price range and duration, followed by a completed appointment booking."
+               loading="lazy" decoding="async">
+          <figcaption>Pricing answered, then booked, in one thread.</figcaption>
+        </figure>
       </div>
     </section>
 
