@@ -297,7 +297,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         <p>Things I built, with the numbers that matter.</p>
       </div>
 
-      <article class="proj">
+      <article class="proj" id="waflow">
         <h3><a href="demo.html">WaFlow &mdash; WhatsApp automation</a></h3>
         <p class="meta">Deployed product &middot; 81-second demo video</p>
         <p>
@@ -307,7 +307,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         </p>
       </article>
 
-      <article class="proj">
+      <article class="proj" id="vishwas">
         <h3><a href="https://github.com/DawnofGenX/vishwas">Vishwas</a></h3>
         <p class="meta">Zero-cloud verification platform &middot; ~34K LoC &middot; 445 tests</p>
         <p>
@@ -319,7 +319,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         </p>
       </article>
 
-      <article class="proj">
+      <article class="proj" id="uartscope">
         <h3><a href="https://github.com/DawnofGenX/uartscope">UARTScope</a></h3>
         <p class="meta">&ldquo;Wireshark for microcontrollers&rdquo; &middot; ~13.9K LoC &middot; 160 tests</p>
         <p>
@@ -330,7 +330,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         </p>
       </article>
 
-      <article class="proj">
+      <article class="proj" id="citesure">
         <h3><a href="https://github.com/DawnofGenX/citesure">CiteSure</a></h3>
         <p class="meta">Local citation verifier &middot; ~9.7K LoC &middot; 288 tests</p>
         <p>
@@ -343,7 +343,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
         </p>
       </article>
 
-      <article class="proj">
+      <article class="proj" id="blind-mcp">
         <h3><a href="https://github.com/DawnofGenX/blind-mcp">blind-mcp</a></h3>
         <p class="meta">Company-research MCP server &middot; ~1K LoC &middot; 16 tests</p>
         <p>
@@ -352,7 +352,26 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
           question, with employer-tag and date provenance preserved on anonymous posts.
         </p>
       </article>
-    </section>
+      <article class="proj" id="quant-regress">
+        <h3><a href="https://github.com/DawnofGenX/quant-regress">quant-regress</a></h3>
+        <p class="meta">CI gate for quantized models &middot; task evals on CPU</p>
+        <p>
+          Fail CI when quantization costs task accuracy. Token-level proxies
+          (perplexity, KL) routinely clear a model a task eval would not. Ships
+          as a GitHub Action plus a CLI with a strict exit-code contract.
+        </p>
+      </article>
+
+      <article class="proj" id="sage">
+        <h3><a href="https://github.com/DawnofGenX/sage">Sage</a></h3>
+        <p class="meta">Passive sales intelligence for Alexa+ &middot; MCP server</p>
+        <p>
+          Calls and messages get captured, logged and summarized into follow-up
+          actions without opening a CRM. MCP server, React simulator and a
+          packaged Alexa skill.
+        </p>
+      </article>
+        </section>
 
     <section aria-labelledby="oss">
       <div class="sec-head">
@@ -399,7 +418,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
       <a href="https://github.com/DawnofGenX">GitHub</a>
       <a href="https://www.linkedin.com/in/priyansh-kansara-a35826368/">LinkedIn</a>
       <a href="https://dev.to/dawnofgenx">Articles</a>
-      <a href="https://github.com/DawnofGenX/devlog">Devlog</a>
+      <a id="devlog" href="https://github.com/DawnofGenX/devlog">Devlog</a>
     </nav>
   </footer>
 
